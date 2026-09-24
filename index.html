@@ -280,7 +280,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 
 <!-- 4) แผนการเรียน -->
 <section class="page" id="p-plan">
-  <div class="head"><h2>แผนการเรียน 4 ปี</h2><p>ตามแผนการศึกษาในเล่มหลักสูตร (หมวด 4 ข้อ 1.4) แยกตามแขนงวิชา · เทียบกับผลการเรียนจริงที่นำเข้า</p></div>
+  <div class="head"><h2>แผนการเรียน 4 ปี</h2><p>ตามแผนการเปิดรายวิชา ปีการศึกษา 2569 ในคู่มือหลักสูตร คณะวิทยาการจัดการ (MSUDRU 69) · เทียบกับผลการเรียนจริงที่นำเข้า</p></div>
   <div id="planView"></div>
 </section>
 
@@ -302,29 +302,30 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
     <span class="who">พัฒนาโดย ผศ.ดร.เสกสรร สายสีสด</span><br>
     สาขาวิชานิเทศศาสตร์ คณะวิทยาการจัดการ มหาวิทยาลัยราชภัฏอุดรธานี
   </span>
-  <span class="sp">ระบบสารสนเทศเช็คผลการสำเร็จการศึกษา · หลักสูตรปรับปรุง พ.ศ. 2569 (รหัส 69 ขึ้นไป) · เวอร์ชัน 1.1</span>
+  <span class="sp">ระบบสารสนเทศเช็คผลการสำเร็จการศึกษา · หลักสูตรปรับปรุง พ.ศ. 2569 (รหัส 69 ขึ้นไป) · เวอร์ชัน 1.2</span>
 </footer>
 
 
 <script>
 /* ================= หลักสูตรนิเทศศาสตรบัณฑิต หลักสูตรปรับปรุง พ.ศ. 2569 · 128 นก. =================
+   รหัสวิชาศึกษาทั่วไป ชื่อแขนง และแผนการเรียนรายภาค ยึดตาม "คู่มือหลักสูตร คณะวิทยาการจัดการ ประจำปีการศึกษา 2569" (MSUDRU 69) หน้า 44–47
    ที่มา: เล่มหลักสูตร ฉบับส่ง อว. (รหัสหลักสูตร 25491691108146 · สภามหาวิทยาลัยอนุมัติ ครั้งที่ 12/2568 วันที่ 17 ธ.ค. 2568) หมวด 4 ข้อ 1.2–1.3 · GE 24 + วิชาเฉพาะ 98 (แกน 68 + แขนง 30) + เลือกเสรี 6 */
-const TRACKS={BC:{name:"วิทยุและโทรทัศน์ดิจิทัล"},DC:{name:"ดิจิทัลคอนเทนต์"}};
+const TRACKS={BC:{name:"วิทยุและโทรทัศน์ดิจิทัล",group:"690400021"},DC:{name:"ดิจิทัลคอนเทนต์และวารสารสนเทศ",group:"690400011"}};
 const DEF_TRACK="BC";
 const INTERN_CODE="CA41404";
 const CUR={
  GE_REQ:{label:"ศึกษาทั่วไป · วิชาบังคับ",need:15,color:"#8FB0DA",fixed:1,courses:[
-  ["GE01001","อัตลักษณ์ UDRU",3],["GE01002","ทักษะดิจิทัลและปัญญาประดิษฐ์",3],["GE01003","ฉลาดคิดทางวิทยาศาสตร์",3],["GE01004","ภาษาไทยเพื่อการสื่อสารร่วมสมัย",3],["GE01005","ภาษาอังกฤษในชีวิตประจำวัน",3]]},
- GE_ELEC:{label:"ศึกษาทั่วไป · วิชาเลือก",need:9,color:"#4E77B4",pick:"เลือก 3 วิชา",collapse:1,courses:[
-  ["GE02101","ภาษาอังกฤษเพื่อคอนเทนต์ครีเอเตอร์",3],["GE02102","ภาษาอังกฤษกับการออกเสียงแบบง่าย",3],["GE02103","เทร็นด์ไทย เรียนภาษาไทยแบบวัยรุ่น",3],["GE02104","ภาษาจีนสำหรับนักท่องเที่ยว",3],["GE02105","ภาษาอังกฤษเพื่อการทดสอบมาตรฐาน",3],["GE02201","ท้องถิ่นดิจิทัล",3],["GE02202","โซเชียลมีเดียศึกษา",3],["GE02203","เอไอ : ดิจิทัลคอนเทนต์",3],["GE02204","ออฟฟิศเด็กใหม่",3],["GE02205","โพลสำรวจทางธุรกิจ",3],["GE02206","ผู้ประกอบการรุ่นใหม่",3],["GE02207","ภูมิปัญญาพารวย",3],["GE02208","เงินดีมีสุข",3],["GE02209","อยู่ดีมีสุข",3],["GE02301","ก้าวทันโลก",3],["GE02302","รู้ทันสังคมไทย",3],["GE02303","พุทธศาสนากับโลกปัจจุบัน",3],["GE02304","ทักษะกฎหมายในสังคมยุคใหม่",3],["GE02305","วัฒนธรรมกระแสนิยม",3],["GE02401","ออกแบบความรัก",3],["GE02402","สมาร์ทคิด",3],["GE02403","การปรับตัวอย่างสร้างสรรค์",3],["GE02404","ศิลปะการพัฒนาชีวิต",3],["GE02405","สูตรสร้างสุข",3],["GE02406","ศิลปะการดูภาพยนตร์",3],["GE02407","อาหารเติมสุข",3],["GE02408","ธรรมชาติเพื่อนันทนาการและการท่องเที่ยว",3],["GE02409","วิถีชีวิตสีเขียว",3],["GE02410","ปลูกดีมีประโยชน์",3]]},
+  ["GE11101","อัตลักษณ์ UDRU",3],["GE11102","ทักษะดิจิทัลและปัญญาประดิษฐ์",3],["GE11103","ฉลาดคิดทางวิทยาศาสตร์",3],["GE11104","ภาษาไทยเพื่อการสื่อสารร่วมสมัย",3],["GE11105","ภาษาอังกฤษในชีวิตประจำวัน",3]]},
+ GE_ELEC:{label:"ศึกษาทั่วไป · วิชาเลือก",need:9,color:"#4E77B4",pick:"เลือก 3 วิชา · วิชา GE อื่นที่มหาวิทยาลัยเปิดก็นับได้",courses:[
+  ["GE22102","ภาษาอังกฤษเพื่อคอนเทนต์ครีเอเตอร์",3],["GE22302","ไลฟ์ แอนด์ ลอว์",3],["GE22413","สูตรสร้างสุข",3]]},
  CORE:{label:"วิชาเฉพาะ · วิชาแกน",need:68,color:"#1B3A6B",fixed:1,courses:[
   ["CA41101","หลักนิเทศศาสตร์",3],["CA41102","การพัฒนาบุคลิกภาพเพื่องานนิเทศศาสตร์",3],["CA41103","การถ่ายภาพเพื่อการสื่อสาร",3],["CA41104","การสื่อข่าวมัลติมีเดียดิจิทัล",3],["CA41105","กลยุทธ์การประชาสัมพันธ์ดิจิทัล",3],["CA41106","การเขียนสร้างสรรค์เพื่องานนิเทศศาสตร์",3],["CA41201","การรู้เท่าทันสื่อสารสนเทศและดิจิทัล",3],["CA41202","การคิดสร้างสรรค์เพื่องานนิเทศศาสตร์",3],["CA41203","กลยุทธ์การเล่าเรื่องและการสร้างสรรค์สื่อใหม่",3],["CA41204","ภาษาอังกฤษเพื่องานนิเทศศาสตร์",3],["CA41205","การใช้ปัญญาประดิษฐ์เพื่องานนิเทศศาสตร์",3],["CA41301","หลักการสื่อสารการตลาดและการตลาดดิจิทัล",3],["CA41302","ผู้ประกอบการสมัยใหม่ในงานนิเทศศาสตร์",3],["CA41303","สาธารณมติและการทำโพล",3],["CA41304","กฎหมายและจริยธรรมสื่อสารมวลชน",3],["CA41305","การสัมมนานิเทศศาสตร์",3],["CA41306","โครงการพิเศษเพื่องานนิเทศศาสตร์",3],["CA41401","ภาษาอังกฤษเพื่อการสื่อข่าว",3],["CA41402","การสื่อสารเพื่อการขับเคลื่อนสังคม",3],["CA41403","การวิจัยนิเทศศาสตร์",3],["CA41404","การฝึกประสบการณ์วิชาชีพนิเทศศาสตร์",5],["NB43312","การออกแบบและพัฒนาโมเดลธุรกิจนิเทศศาสตร์",3]]},
  TRACK_REQ:{label:"แขนงวิชา · วิชาบังคับ",need:18,color:"#D6336C",fixed:1,track:1,courses:{
-  BC:[["CA42101","หลักการสื่อสารมวลชน",3],["CA42201","การเขียนบทสำหรับสื่อดิจิทัล",3],["CA42202","การผลิตรายการเสียงสำหรับสื่อดิจิทัล",3],["CA42301","การสร้างสรรค์รายการโทรทัศน์บนสื่อดิจิทัล",3],["CA42302","การผลิตภาพยนตร์สั้น",3],["CA42303","การสร้างสรรค์รายการสดและสตรีมมิ่ง",3]],
+  BC:[["CA42101","หลักการสื่อสารมวลชน",3],["CA42201","การเขียนบทสำหรับสื่อดิจิทัล",3],["CA42202","การผลิตรายการเสียงสำหรับสื่อดิจิทัล",3],["CA42301","การสร้างสรรค์รายการโทรทัศน์บนสื่อดิจิทัล",3],["CA42302","การผลิตภาพยนตร์สั้น",3],["CA42303","การสร้างสรรค์รายการสดและเทคนิคการสตรีมมิ่ง",3]],
   DC:[["CA43101","หลักการสื่อสารเชิงวารสารสนเทศและสื่อดิจิทัล",3],["CA43201","การเขียนเชิงโน้มน้าวเพื่อการตลาดดิจิทัล",3],["CA43202","การออกแบบอินโฟกราฟิกและมัลติมีเดีย",3],["CA43204","การผลิตรายการสดบนสื่อดิจิทัล",3],["CA43301","การออกแบบเนื้อหาและสร้างสรรค์ดิจิทัลคอนเทนต์",3],["CA43302","เทคนิคการนำเสนอและกลยุทธ์การโน้มน้าวใจ",3]]}},
  TRACK_ELEC:{label:"แขนงวิชา · วิชาเลือก",need:12,color:"#F06595",track:1,pick:"เลือก 4 วิชา",courses:{
   BC:[["CA42203","การผลิตกราฟิกเพื่องานวิทยุโทรทัศน์",3],["CA42204","ศิลปะการใช้เสียงเพื่องานวิทยุและโทรทัศน์",3],["CA42205","การลำดับภาพและสร้างสรรค์เสียง",3],["CA42206","เทคโนโลยีการผลิตรายการวิทยุกระจายเสียงและวิทยุโทรทัศน์",3],["CA42304","หลักการเป็นผู้ประกาศข่าวและพิธีกร",3],["CA42305","การแสดงและการกำกับการแสดง",3],["CA42306","การออกแบบฉากและวัสดุอุปกรณ์ประกอบฉาก",3],["CA42401","การบริหารงานวิทยุและโทรทัศน์",3],["CA42402","การสื่อข่าววิทยุและโทรทัศน์ดิจิทัล",3],["CA42403","การสื่อสารวัฒนธรรมผ่านอุตสาหกรรมบันเทิง",3],["CA42404","การผลิตข่าวและสารคดี",3]],
-  DC:[["CA43203","การสื่อสารเชิงวาทศิลป์",3],["CA43303","การผลิตสื่อสิ่งพิมพ์ดิจิทัล",3],["CA43304","การผลิตสารคดีวัฒนธรรม",3],["CA43305","การจัดกิจกรรมพิเศษเพื่องานนิเทศศาสตร์",3],["CA43306","การสร้างสรรค์และผลิตงานโฆษณา",3],["CA43307","การตลาดดิจิทัลข้ามวัฒนธรรม",3],["CA43401","การจัดการภาวะวิกฤติบนสื่อดิจิทัล",3],["CA43402","การจัดการข้อมูลเพื่อการสื่อสารดิจิทัล",3],["CA43403","การจัดการสารสนเทศและเทคโนโลยีดิจิทัลเพื่องานนิเทศศาสตร์",3]]}},
+  DC:[["CA43203","การสื่อสารเชิงวาทศิลป์",3],["CA43303","การผลิตสื่อสิ่งพิมพ์ดิจิทัล",3],["CA43304","การผลิตสารคดีวัฒนธรรม",3],["CA43305","การจัดกิจกรรมพิเศษเพื่อการโฆษณาและประชาสัมพันธ์",3],["CA43306","การสร้างสรรค์และผลิตงานโฆษณา",3],["CA43307","การตลาดดิจิทัลข้ามวัฒนธรรม",3],["CA43401","การจัดการภาวะวิกฤติบนสื่อดิจิทัล",3],["CA43402","การจัดการข้อมูลเพื่อการสื่อสารดิจิทัล",3],["CA43403","การจัดการสารสนเทศและเทคโนโลยีดิจิทัลเพื่องานนิเทศศาสตร์",3]]}},
  FREE:{label:"วิชาเลือกเสรี",need:6,color:"#BCC6D6",courses:[]}
 };
 const ORDER=["GE_REQ","GE_ELEC","CORE","TRACK_REQ","TRACK_ELEC","FREE"];
@@ -332,28 +333,35 @@ const INDEX={};
 ORDER.forEach(k=>{const s=CUR[k];
   if(s.track){Object.keys(s.courses).forEach(t=>s.courses[t].forEach(c=>INDEX[c[0]]={sec:k,track:t,name:c[1],credit:c[2]}));}
   else s.courses.forEach(c=>INDEX[c[0]]={sec:k,name:c[1],credit:c[2]});});
+/* รหัสตามเล่มหลักสูตร (ส่ง อว.) — รับไว้ด้วย เผื่อใบแจ้งผลการเรียนออกรหัสแบบนี้ */
+const ALIAS={GE01001:"GE11101",GE01002:"GE11102",GE01003:"GE11103",GE01004:"GE11104",GE01005:"GE11105"};
+const GE_BOOK=[["GE02101","ภาษาอังกฤษเพื่อคอนเทนต์ครีเอเตอร์",3],["GE02102","ภาษาอังกฤษกับการออกเสียงแบบง่าย",3],["GE02103","เทร็นด์ไทย เรียนภาษาไทยแบบวัยรุ่น",3],["GE02104","ภาษาจีนสำหรับนักท่องเที่ยว",3],["GE02105","ภาษาอังกฤษเพื่อการทดสอบมาตรฐาน",3],["GE02201","ท้องถิ่นดิจิทัล",3],["GE02202","โซเชียลมีเดียศึกษา",3],["GE02203","เอไอ : ดิจิทัลคอนเทนต์",3],["GE02204","ออฟฟิศเด็กใหม่",3],["GE02205","โพลสำรวจทางธุรกิจ",3],["GE02206","ผู้ประกอบการรุ่นใหม่",3],["GE02207","ภูมิปัญญาพารวย",3],["GE02208","เงินดีมีสุข",3],["GE02209","อยู่ดีมีสุข",3],["GE02301","ก้าวทันโลก",3],["GE02302","รู้ทันสังคมไทย",3],["GE02303","พุทธศาสนากับโลกปัจจุบัน",3],["GE02304","ทักษะกฎหมายในสังคมยุคใหม่",3],["GE02305","วัฒนธรรมกระแสนิยม",3],["GE02401","ออกแบบความรัก",3],["GE02402","สมาร์ทคิด",3],["GE02403","การปรับตัวอย่างสร้างสรรค์",3],["GE02404","ศิลปะการพัฒนาชีวิต",3],["GE02405","สูตรสร้างสุข",3],["GE02406","ศิลปะการดูภาพยนตร์",3],["GE02407","อาหารเติมสุข",3],["GE02408","ธรรมชาติเพื่อนันทนาการและการท่องเที่ยว",3],["GE02409","วิถีชีวิตสีเขียว",3],["GE02410","ปลูกดีมีประโยชน์",3]];
+GE_BOOK.forEach(c=>{ if(!INDEX[c[0]]) INDEX[c[0]]={sec:"GE_ELEC",name:c[1],credit:c[2]}; });
+Object.keys(ALIAS).forEach(a=>INDEX[a]=INDEX[ALIAS[a]]);
+const canon=c=>ALIAS[c]||c;
+const isGE=c=>/^GE\d{5}$/.test(c);
 const GP={"A":4,"B+":3.5,"B":3,"C+":2.5,"C":2,"D+":1.5,"D":1,"F":0};
 const OTHERG=["W","I","S"];
 const NEED_TOTAL=128, NEED_GPA=2.00;
 
-/* ===== แผนการศึกษา (เล่มหลักสูตร หมวด 4 ข้อ 1.4) · คีย์ "ปี-ภาค" =====
-   @GE = วิชาเลือกศึกษาทั่วไป 3 นก. · @EL = วิชาเลือกในแขนง 3 นก. · @FREE = เลือกเสรี 3 นก. */
+/* ===== แผนการเปิดรายวิชา ปีการศึกษา 2569 (คู่มือหลักสูตร MSUDRU 69 หน้า 44–47) · คีย์ "ปี-ภาค" =====
+   ?รหัส = วิชาเลือกที่คู่มือกำหนด (ถ้าเรียนวิชาเลือกอื่นในหมวดเดียวกันแทน ระบบนับให้) · @FREE = เลือกเสรี 3 นก. */
 const PLAN_COMMON={
- "1-1":["GE01001","GE01002","CA41101","CA41102","CA41103"],
- "1-2":["GE01004","@GE","CA41104","CA41105","CA41106"],
- "2-1":["GE01005","@GE","CA41201","CA41202","CA41203"],
- "2-2":["GE01003","@GE","CA41204","CA41205","CA41301"],
+ "1-1":["GE11101","GE11102","CA41101","CA41102","CA41105"],
+ "1-2":["GE11104","?GE22102","CA41104","CA41106","CA41103"],
+ "2-1":["GE11105","?GE22302","CA41201","CA41202","CA41203"],
+ "2-2":["GE11103","?GE22413","CA41204","CA41205","CA41301"],
  "3-1":["CA41302","CA41303","CA41304"],
  "3-2":["CA41305","CA41306","NB43312"],
  "4-1":["CA41401","CA41402","CA41403"],
  "4-2":["CA41404"]};
 const PLAN_TRACK={
- BC:{"1-2":["CA42101"],"2-1":["CA42201"],"2-2":["CA42202","@EL"],"3-1":["CA42301","CA42303","@EL","@FREE"],"3-2":["CA42302","@EL","@EL","@FREE"]},
- DC:{"1-2":["CA43101"],"2-1":["CA43201"],"2-2":["CA43302","@EL"],"3-1":["CA43202","CA43204","@EL","@FREE"],"3-2":["CA43301","@EL","@EL","@FREE"]}};
-const SLOT={"@GE":{sec:"GE_ELEC",name:"วิชาเลือกศึกษาทั่วไป (GE02xxx)"},"@EL":{sec:"TRACK_ELEC",name:"วิชาเลือกในแขนงวิชา"},"@FREE":{sec:"FREE",name:"วิชาเลือกเสรี"}};
+ BC:{"1-2":["CA42101"],"2-1":["CA42201"],"2-2":["CA42202","?CA42204"],"3-1":["CA42301","CA42303","?CA42203","@FREE"],"3-2":["CA42302","?CA42402","?CA42403","@FREE"]},
+ DC:{"1-2":["CA43101"],"2-1":["CA43201"],"2-2":["CA43302","?CA43303"],"3-1":["CA43202","CA43204","?CA43305","@FREE"],"3-2":["CA43301","?CA43304","?CA43403","@FREE"]}};
+const SLOT={"@FREE":{sec:"FREE",name:"วิชาเลือกเสรี"}};
 const TERMS=["1-1","1-2","2-1","2-2","3-1","3-2","4-1","4-2"];
 const planOf=track=>{const o={};TERMS.forEach(k=>o[k]=[...(PLAN_COMMON[k]||[]),...((PLAN_TRACK[track]||{})[k]||[])]);return o;};
-const planTermOf=(code,track)=>{const P=planOf(track);return TERMS.find(k=>P[k].includes(code))||null;};
+const planTermOf=(code,track)=>{const P=planOf(track);return TERMS.find(k=>P[k].includes(code)||P[k].includes("?"+code))||null;};
 
 /* ================= ข้อมูล ================= */
 const KEY="udru_selfcheck_cur69_v1";   /* แยกจากระบบหลักสูตรเดิม (udru_selfcheck_v1) */
@@ -364,7 +372,7 @@ if(!TRACKS[DB.me.track]) DB.me.track=DEF_TRACK;
 const save=()=>localStorage.setItem(KEY,JSON.stringify(DB));
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const gr=code=>DB.grades.find(g=>g.code===code);
+const gr=code=>DB.grades.find(g=>g.code===code)||DB.grades.find(g=>canon(g.code)===code);
 
 /* ================= เครื่องมือตรวจจบ ================= */
 function audit(){
@@ -382,6 +390,7 @@ function audit(){
     rawPass+=cr;
     const i=INDEX[r.code];let t=null;
     if(i&&(!i.track||i.track===track))t=i.sec;
+    if(!i&&isGE(r.code)) t="GE_ELEC";                                  /* วิชา GE อื่นที่มหาวิทยาลัยเปิด → วิชาเลือกศึกษาทั่วไป */
     /* วิชาเลือก (GE เลือก / แขนงเลือก) ที่เรียนเกินจำนวนที่กำหนด → ไปนับเป็นเลือกเสรี */
     if(t && !CUR[t].fixed && t!=="FREE" && sec[t].earned>=sec[t].need) t=null;
     if(!t){ auto.push({r,cr}); return; }
@@ -394,7 +403,7 @@ function audit(){
   });
   const missing=[];
   ORDER.forEach(k=>{ if(!CUR[k].fixed)return;
-    const got=new Set(sec[k].taken.map(r=>r.code));
+    const got=new Set(sec[k].taken.map(r=>canon(r.code)));
     sec[k].plan.forEach(c=>{if(!got.has(c[0]))missing.push({sec:k,code:c[0],name:c[1],credit:c[2]});});});
   const earned=ORDER.reduce((a,k)=>a+Math.min(sec[k].earned,sec[k].need),0);
   const short=ORDER.reduce((a,k)=>a+Math.max(0,sec[k].need-sec[k].earned),0);
@@ -419,7 +428,7 @@ document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{
 });
 
 /* ================= 1) ข้อมูลของฉัน ================= */
-$("#mTrack").innerHTML=Object.keys(TRACKS).map(k=>`<option value="${k}">${TRACKS[k].name}</option>`).join("");
+$("#mTrack").innerHTML=Object.keys(TRACKS).map(k=>`<option value="${k}">${TRACKS[k].name} (หมู่ ${TRACKS[k].group})</option>`).join("");
 /* ---- รูปนักศึกษา: ครอบเป็นสี่เหลี่ยมจัตุรัส ย่อ 256px แล้วบีบอัดจนเล็กกว่า ~40KB ---- */
 function compressPhoto(file,box=256,limit=40000){
   return new Promise((res,rej)=>{
@@ -553,7 +562,10 @@ function renderFill(){
 
   const secs=["GE_REQ","GE_ELEC","CORE","TRACK_REQ","TRACK_ELEC"];
   $("#fillList").innerHTML=secs.map(k=>{
-    const s=CUR[k],list=s.track?s.courses[track]:s.courses;
+    const s=CUR[k];let list=s.track?s.courses[track]:s.courses;
+    if(k==="GE_ELEC"){ const have=new Set(list.map(c=>c[0]));
+      DB.grades.filter(r=>(INDEX[r.code]?.sec==="GE_ELEC"||(!INDEX[r.code]&&isGE(r.code)))&&!have.has(r.code))
+        .forEach(r=>{have.add(r.code);list=[...list,[r.code,r.name||INDEX[r.code]?.name||"",+r.credits||3]];}); }
     const done=list.filter(c=>{const g=gr(c[0]);return g&&(g.grade in GP)&&g.grade!=="F";})
                    .reduce((x,c)=>x+c[2],0);
     return `<div class="card"><div class="pad">
@@ -582,7 +594,7 @@ function renderFill(){
     </div></div>`;}).join("");
 
   /* วิชาอื่น ๆ */
-  const others=DB.grades.filter(r=>{const i=INDEX[r.code];return !i||(i.track&&i.track!==track);});
+  const others=DB.grades.filter(r=>{const i=INDEX[r.code];if(!i&&isGE(r.code))return false;return !i||(i.track&&i.track!==track);});
   const A=audit();
   const secOf=c=>{ const r=gr(c),ok=r&&((r.grade in GP&&r.grade!=="F")||r.grade==="S");
     if(!ok) return "ยังไม่ผ่าน"; return A.sec.FREE.taken.some(x=>x.code===c)?"วิชาเลือกเสรี":"เกินเกณฑ์ — ไม่นับ"; };
@@ -630,6 +642,7 @@ function normCode(raw){
                     .replace(/B/g,"8").replace(/Z/g,"2").replace(/G/g,"6").replace(/Q/g,"9");
   c=L+D;
   if(INDEX[c]) return c;
+  if(isGE(c)) return c;          /* รหัส GE มีหลายวิชาที่ไม่ได้อยู่ในรายการ — ไม่เดาแก้ */
   let best=null,bd=2;
   CODES.forEach(k=>{const d=lev(k,c); if(d<bd){bd=d;best=k;}});
   if(best) return best;
@@ -870,13 +883,22 @@ function renderPlan(){
   const a=audit(),track=a.track,P=planOf(track),ey=entryYear();
   const idxs=DB.grades.map(r=>termIdx(r.term,ey)).filter(i=>i&&i>=1);
   const cur=idxs.length?Math.max(...idxs):0;       /* ภาคล่าสุดที่มีผลการเรียน */
-  const fill={};Object.keys(SLOT).forEach(k=>fill[k]=[...a.sec[SLOT[k].sec].taken].sort((x,y)=>(termIdx(x.term,ey)||99)-(termIdx(y.term,ey)||99)));
+  const byTerm=(x,y)=>(termIdx(x.term,ey)||99)-(termIdx(y.term,ey)||99);
+  const fill={};Object.keys(SLOT).forEach(k=>fill[k]=[...a.sec[SLOT[k].sec].taken].sort(byTerm));
+  const rec=new Set(TERMS.flatMap(k=>P[k]).filter(c=>c[0]==="?").map(c=>c.slice(1)));
+  const pool={GE_ELEC:[],TRACK_ELEC:[]};   /* วิชาเลือกที่เรียนแทนวิชาที่คู่มือกำหนด */
+  Object.keys(pool).forEach(k=>pool[k]=a.sec[k].taken.filter(r=>!rec.has(canon(r.code))).sort(byTerm));
   let due=0,dueOk=0;const late=[];
   const yrs=[1,2,3,4].map(y=>`<div class="plan-yr">ชั้นปีที่ ${y} · ปีการศึกษา ${ey+y-1}</div>`+[1,2].map(sm=>{
     const k=`${y}-${sm}`,ti=(y-1)*2+sm,isDue=cur>0&&ti<=cur;let cr=0,lateHere=0;
     const rows=P[k].map(code=>{
       let c,g,label,credit=3,slot=SLOT[code];
       if(slot){ g=fill[code].shift(); c=g?g.code:"—"; label=g?`${esc(g.name||INDEX[g.code]?.name||"")} <span class="small muted">· ${slot.name}</span>`:`<span class="muted">${slot.name}</span>`; }
+      else if(code[0]==="?"){ const real=code.slice(1),i=INDEX[real]; g=gr(real); c=real; credit=i?.credit||3;
+        const tag=i?.sec==="GE_ELEC"?"วิชาเลือกศึกษาทั่วไป":"วิชาเลือกในแขนง";
+        label=`${esc(i?.name||"")} <span class="small muted">· ${tag}</span>`;
+        if(!(g&&passedG(g.grade))){ const sub=(pool[i?.sec]||[]).shift();
+          if(sub){ g=sub; c=sub.code; label=`${esc(sub.name||INDEX[sub.code]?.name||"")} <span class="small muted">· ${tag} (เรียนแทน ${real})</span>`; } } }
       else { const i=INDEX[code]; g=gr(code); c=code; label=esc(i?.name||""); credit=i?.credit||3; }
       cr+=credit;
       const ok=g&&passedG(g.grade);
@@ -885,7 +907,7 @@ function renderPlan(){
       else if(g&&g.grade) st=`<span class="pill bad">✗ ${esc(g.grade)} · ต้องลงใหม่</span>`;
       else if(isDue) st=`<span class="pill warn">⚠ เลยกำหนด</span>`;
       else st=`<span class="pill slot">ยังไม่ถึงกำหนด</span>`;
-      if(isDue){due++; if(ok)dueOk++; else {lateHere++; late.push({code:c,name:slot?slot.name:(INDEX[code]?.name||""),k});}}
+      if(isDue){due++; if(ok)dueOk++; else {lateHere++; late.push({code:c,name:slot?slot.name:(INDEX[code.replace("?","")]?.name||""),k});}}
       return `<tr><td style="width:84px"><b>${esc(c)}</b></td><td>${label}</td><td class="num" style="width:34px">${credit}</td><td class="st">${st}</td></tr>`;}).join("");
     return `<div class="termcard"><div class="th${lateHere?" late":""}"><span class="dot" style="background:${isDue?(lateHere?"var(--amber)":"var(--green)"):"var(--slate)"}"></span>ภาค ${sm}/${ey+y-1}
       <span class="gp">${cr} หน่วยกิต${cur===ti?" · <b>ภาคล่าสุดที่มีผลการเรียน</b>":""}</span></div>
@@ -894,7 +916,7 @@ function renderPlan(){
   $("#planView").innerHTML=`
   <div class="card"><div class="pad">
     <div class="plan-sum">
-      <div><div class="n">${esc(TRACKS[track].name)}</div><div class="small muted">แขนงวิชา · เข้าปีการศึกษา ${ey}</div></div>
+      <div><div class="n">${esc(TRACKS[track].name)}</div><div class="small muted">แขนงวิชา · หมู่ ${TRACKS[track].group} · เข้าปีการศึกษา ${ey}</div></div>
       <div><div class="n">${curTxt}</div><div class="small muted">เรียนถึง (จากไฟล์ผลการเรียน)</div></div>
       <div><div class="n">${dueOk} / ${due}</div><div class="small muted">วิชาตามแผนที่ผ่านแล้ว</div></div>
       <div><div class="n" style="color:${late.length?"var(--red)":"var(--green)"}">${late.length}</div><div class="small muted">วิชาเลยกำหนด / ต้องลงใหม่</div></div>
